@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+	<!-- 설 정 -->
+	<!-- 자바단의 서블릿을 구동 -->
+	<servlet><!-- 서블릿을 등록(자바프로그램 등록) -->
+		<servlet-name>FirstServlet</servlet-name><!-- 사용자 임의로 -->
+		<servlet-class>pro05_2,ex01.FirstServlet</servlet-class>
+	</servlet>
+	<servlet-mapping> <!-- 외부와 연동 -->
+		<servlet-name>FirstServlet</servlet-name>
+		<url-pattern>/First</url-pattern>
+	</servlet-mapping>
+	
+  <display-name>pro05_2</display-name>
+   <!--webapp로 접속할 때 필요한 파일  -->
+   <!-- webapp에 아래 파일이 존재하면 그 파일을 시작파일로 사용 -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+</web-app>
