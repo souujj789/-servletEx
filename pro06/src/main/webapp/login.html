@@ -1,0 +1,39 @@
+<!--
+get : 일반페이지 접속, form에서 get접속
+		www.web.com?id=sample&pw=1234
+		?변수=값&변수=값...으로 전달
+		8KB~16KB크기 제약, 데이터를 조회
+post : form에서 post접속
+		www.web.com
+		메세지에 변수 = 값
+		보안성이 좋다, 크기 제약이 없음, 데이터를 저장, 수정
+  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 서버에 변수와 값을 전달하는 폼 -->
+<!-- name웹페이지에서 위치를 찾기 위한 Form의 이름 (CSS, Script)
+	 action 자바단에 사용할 @WebServlet("") 접속명
+	 method 전달하는 방식(get, post)
+	 encType 전달시 문자형 <meta charset="UTF-8">있으면 생략가능
+	 form내에는 input태그로 구성
+	 input type : 입력종류(text,password, email, phone...)
+	 	   name : 변수명
+	 	   value : 값(초기값, 전달받은 결과값)
+	 	   type중에서 특별한 기능 submit(폼내용을 서버에 전달), reset(폼초기화)
+	 -->
+<form name = "formlogin" method = "get" action="login" encType = "UTF-8">
+아이디 : <input type = "text" name = "user_id"><br>
+비밀번호 : <input type = "password" name = "user_pw"><br>
+<input type="submit" value = "로그인">
+<input type="reset" value = "새로입력">
+</form>
+<!--                            action input name = 값,....
+	http://localhost:8080/pro06/login?user_id=asdfd&user_pw=1234 -->
+</body>
+</html>

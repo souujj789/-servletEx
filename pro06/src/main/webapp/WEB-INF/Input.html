@@ -1,0 +1,27 @@
+<!-- 
+get 방식으로 전송
+checkbox에 이름을 subject로 선언해서
+subject이름으로 여러개 값을 동시에 전달
+변수명(1개) = 값(여러개)
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form method = "get" action="input"> <!--action지정후 java 생성-->
+아이디 : <input type="text" name="user_id"><br>
+비밀번호 : <input type="password" name="user_pw"><br>
+<input type="checkbox" name="subject" value="java" checked="checked">자바
+<input type="checkbox" name="subject" value="C언어" >C언어
+<input type="checkbox" name="subject" value="jsp" >JSP
+<input type="checkbox" name="subject" value="안드로이드" >안드로이드<br>
+<input type="submit" value="전송">
+<input type="reset" value="초기화">
+</form>
+</body>
+</html>
