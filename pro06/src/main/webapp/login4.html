@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 상단에 스크립트 구성 가능 (사용자가 구성한 스크립트)-->
+		<script type="text/javascript"><!-- 선언 -->
+			//메소드로 구성
+			//function 메소드명(인수..){프로그램 작업}
+			//int, float, String 데이터형을 추상적 데이터형 지정 가능 var값에 따라서 데이터형이 자동 변환
+			function fn_validate() {
+				//변수선언
+								//해당 위치 찾기
+				var formLogin = document.frmLogin; //document(html 중에서).frmLogin
+				var user_id = frmLogin.user_id.value; //frmLogin(태그)에 user_id(name)의 값을 가져온다
+				var user_pw = frmLogin.user_pw.value;
+				//유효성 검사(개발자가 의도한 값인지 확인)
+				//사용자 아이디가 null이거나 없으면 비밀번호가 null이거나 없으면 이 중 하나라도 맞으면 
+				if((user_id.length==0 || user_id=="")||(user_pw.length==0 || user_pw=="")){
+					alert("아이디와 비밀번호는 필수입니다.");//알림창, JOptionPane MessageBox
+				}else{//정상적으로 입력을 하였다면
+					frmLogin.method = "post";//from에 method를 post로 설정
+					frmLogin.action = "login4";//연결할 맵핑 login4로 설정
+					frmLogin.submit();//서버에요청(form의 모든 변수 전달) - 1. 버튼을 이용해서 수동으로 보내는 방법
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<!-- form이나 다른 태그에 name->css나 script 사용하기 위해 -->
+	<!-- user_id, user_pw,user_address -->
+	<form name = "frmLogin" method = "get" action="login4" encType = "UTF-8">
+		아이디 : <input type = "text" name = "user_id"><br>
+		비밀번호 : <input type = "password" name = "user_pw"><br>
+		<!-- 로그인 버튼을 클릭했을때  fn_validate()메소드를 실행-->
+		<input type="button" onclick = "fn_validate()" value = "로그인">
+		<input type="submit" value = "전송">
+		<input type="reset" value = "다시 입력">
+		<!-- 사용자, 구분값(수정,삽입) -->
+		<input type="hidden" name = "user_address" value = "서울시 성북구">
+	</form>
+	
+	<!-- 하단에 스크립트 구성 가능 (부트스트립트)-->
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><!-- 문자셋, CSS, JAVAScript, Ajak -->
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body><!-- 본문내용 -->
+<!-- HTML은 서버를 1번 실행하고 수정후에는 F5를 갱신으로 확인 가능-->
+<!-- method get->doGet, post->doPost, action=@WebServlet 연결(맵핑)-->
+<form name = "formlogin" method = "get" action="login3" encType = "UTF-8">
+<!--scanner 입력창 JLabel, JTextfield(문자열입력창), Jbutton-->
+
+아이디 : <input type = "text" name = "user_id"><br>
+<!-- input의 name = 변수명 (어떤 변수에 저장할 것인지 정할수있음)-->
+
+비밀번호 : <input type = "password" name = "user_pw"><br>
+<!--<br> 엔터키 역할-->
+
+<input type="submit" value = "로그인">
+<!-- form 안에 지정된 곳으로 서버에 전달 ex)제출 버튼-->
+
+<input type="reset" value = "새로입력">
+</form>
+</body>
+</html>
