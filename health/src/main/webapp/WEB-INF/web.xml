@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>health</display-name>
+  <welcome-file-list><!-- 시작페이지 등록 -->
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param><!-- 공용 변수 선언 -->
+  	<param-name>driver</param-name><!-- 변수명(사용자지정) -->
+  	<param-value>com.mysql.jdbc.Driver</param-value><!-- 값 -->
+  </context-param>
+  <context-param>
+  	<param-name>url</param-name><!-- 데이터베이스 주소 -->
+  	<param-value>jdbc:mysql://localhost:3306/servlet</param-value>
+  </context-param>
+    <context-param>
+  	<param-name>username</param-name><!-- 아이디 -->
+  	<param-value>sample</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>password</param-name><!-- 패스워드 -->
+  	<param-value>1234</param-value>
+  </context-param>
+  <servlet><!-- 서블릿 선언(서블릿 초기 사용할때 설정), 맵핑없음, 파일 연동 필요없이 서블릿을 실행할때 가장 먼저 작업 -->
+  <!-- 데이터베이스 연결 작업  -->
+	  <servlet-name>AppInit</servlet-name><!-- 클래스명과 동일하게 -->
+	  <servlet-class>com.controller.AppInit</servlet-class><!-- 사용할 클래스 -->
+	  <load-on-startup>1</load-on-startup><!-- 실행순서 -->
+  </servlet>
+</web-app>
